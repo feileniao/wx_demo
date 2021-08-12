@@ -1,0 +1,32 @@
+spring:
+   application:
+      name: wx_demo
+server:
+   port: 8099
+
+logging:
+   level:
+      org.springframework.web: info
+      com.github.binarywang.demo.wx.pay: info
+      com.github.binarywang.wxpay: info
+wx:
+   pay:
+      appId: xx #微信公众号或者小程序等的appid
+      mchId: xx #微信支付商户号
+      mchKey: xx #微信支付商户密钥
+      subAppId: xx #服务商模式下的子商户公众账号ID
+      subMchId: xx #服务商模式下的子商户号
+      keyPath: xx # p12证书的位置，可以指定绝对路径，也可以指定类路径（以classpath:开头）
+
+# ===== 自定义swagger配置 ===== #
+swagger:
+   enable: true
+   application-name: ${spring.application.name}
+   application-version: 1.0
+   application-description: wx_demo swagger 3.0整合Demo
+   try-host: http://localhost:${server.port}
+
+
+
+
+
